@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Jogo da Velha</h1>
+      <p class="subtitle">Tic Tac Toe</p>
+    </header>
+
+    <div class="device">
+      <div class="shell">
+        <div class="screen">
+          <div class="grid" id="board">
+            <span class="line v1" aria-hidden="true"></span>
+            <span class="line v2" aria-hidden="true"></span>
+            <span class="line h1" aria-hidden="true"></span>
+            <span class="line h2" aria-hidden="true"></span>
+
+            <button type="button" class="cell" data-index="0" disabled></button>
+            <button type="button" class="cell" data-index="1" disabled></button>
+            <button type="button" class="cell" data-index="2" disabled></button>
+            <button type="button" class="cell" data-index="3" disabled></button>
+            <button type="button" class="cell" data-index="4" disabled></button>
+            <button type="button" class="cell" data-index="5" disabled></button>
+            <button type="button" class="cell" data-index="6" disabled></button>
+            <button type="button" class="cell" data-index="7" disabled></button>
+            <button type="button" class="cell" data-index="8" disabled></button>
+          </div>
+        </div>
+      </div>
+      <span class="port" aria-hidden="true"></span>
+    </div>
+
+    <form id="setup" autocomplete="off">
+      <p class="lead">Quem vai jogar?</p>
+      <label>
+        <span>Jogador <b class="x">X</b></span>
+        <input type="text" name="p1" maxlength="16" required autofocus>
+      </label>
+      <label>
+        <span>Jogador <b class="o">O</b></span>
+        <input type="text" name="p2" maxlength="16" required>
+      </label>
+      <button type="submit" class="primary">Começar</button>
+    </form>
+
+    <section id="game" hidden>
+      <p id="status" aria-live="polite"></p>
+
+      <div class="score">
+        <p><span class="x" id="name-x"></span> <b id="score-x">0</b></p>
+        <p>Empates <b id="score-draw">0</b></p>
+        <p><b id="score-o">0</b> <span class="o" id="name-o"></span></p>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="primary" id="again">Nova partida</button>
+        <button type="button" class="link" id="change">Trocar jogadores</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
